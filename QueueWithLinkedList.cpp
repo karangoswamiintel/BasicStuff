@@ -36,20 +36,24 @@ class QueueWithLinkedList
     Node* head;
     Node* tail;
     public:
+ 
     QueueWithLinkedList()
     {
         head = nullptr;
         tail = nullptr;
     }
+
     QueueWithLinkedList(Node* n)
     {
         head = tail = n;
     }
+
     QueueWithLinkedList(void* _d)
     {
         Node* tmp = new Node(_d);
         head = tail = tmp;
     }
+
     void enqueueNode(Node* n)
     {
         if(!tail) 
@@ -60,13 +64,12 @@ class QueueWithLinkedList
             tail = tail->next;
         }
     }
+
     void enqueueData(void* d)
     {
         Node* tmp = new Node(d);
         if(!tail)
-        {
             head = tail = tmp;
-        }
         else
         {
             tail->next = tmp;
