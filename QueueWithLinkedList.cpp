@@ -95,7 +95,7 @@ class QueueWithLinkedList
 
 int main() {
 	// your code goes here
-	cout << "hello messed up world \n";
+	cout << "hello whats up world \n";
 	Node* c = new Node();
 	void* dataB = new int(3);
 	Node* b = new Node(dataB);
