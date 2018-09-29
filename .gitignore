@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# Atom compile error file
+compiling_error.txt
