@@ -5,12 +5,12 @@ using namespace std;
 
 int main() {
 	// your code goes here
-	cout << "This is a queue implementation \n";
-/*	Node* c = new Node();
+	cout << "This is a queue implementation \n"<<endl;
+	Node* c = new Node();
 	void* dataB = new int(3);
 	void* dataA = new int(40);
 	Node* a = new Node(dataA);
-    a->printNode();*/
+    a->printNode();
 	//QueueWithLinkedList *q = new QueueWithLinkedList(a);
 
 /*	q->enqueueData(dataB);

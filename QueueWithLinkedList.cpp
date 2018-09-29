@@ -2,18 +2,6 @@
 #include <iostream>
 using namespace std;
 
-void printNode(Node* n)
-{
-    if(!n->data)
-    printf("NULL");
-    else
-    {
-        int *x = (int *)n->data;
-        cout<<*x;
-    }
-
-}
-
 QueueWithLinkedList::QueueWithLinkedList()
 {
     head = nullptr;
@@ -22,8 +10,8 @@ QueueWithLinkedList::QueueWithLinkedList()
 
 QueueWithLinkedList::QueueWithLinkedList(Node* n)
 {
-    cout<<"CALLING CONSTRUCTOR"<<endl;
-    //head = tail = n;
+    //cout<<"CALLING CONSTRUCTOR"<<endl;
+    head = tail = n;
 }
 
 QueueWithLinkedList::QueueWithLinkedList(void* _d)
@@ -119,7 +107,7 @@ void QueueWithLinkedList::printQueue()
     cout<< "<== ";
     while(pntr)
     {
-        printNode(pntr);
+        pntr->printNode();
         if(pntr->next)
             cout<<"->";
         pntr = pntr->next;

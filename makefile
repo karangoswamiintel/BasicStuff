@@ -22,6 +22,5 @@ Node.o: Node.h
 QueueWithLinkedList.o: QueueWithLinkedList.h Node.h
 	$(CXX) $(CXXFLAGS) -c QueueWithLinkedList.cpp
 
-
 clean:
 	rm main main.o QueueWithLinkedList.o Node.o
