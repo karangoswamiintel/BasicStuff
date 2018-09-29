@@ -13,10 +13,10 @@ main: main.o QueueWithLinkedList.o
 	$(CXX) $(CXXFLAGS) -o main main.o QueueWithLinkedList.o
 
 # The main.o target can be written more simply
-main.o: QueueWithLinkedList.h main.cpp
+main.o: main.cpp QueueWithLinkedList.h
 	$(CXX) $(CXXFLAGS) -c main.cpp
 
-QueueWithLinkedList.o: QueueWithLinkedList.h QueueWithLinkedList.cpp
+QueueWithLinkedList.o: QueueWithLinkedList.h
 	$(CXX) $(CXXFLAGS) -c QueueWithLinkedList.cpp
 
 clean:
