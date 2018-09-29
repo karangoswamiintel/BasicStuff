@@ -1,6 +1,6 @@
 #ifndef NODE_H
 #define NODE_H
-using namespace std;
+#include <iostream>
 class Node
 {
 public:
