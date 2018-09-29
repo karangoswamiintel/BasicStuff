@@ -18,3 +18,6 @@ main.o: QueueWithLinkedList.h main.cpp
 
 QueueWithLinkedList.o: QueueWithLinkedList.h QueueWithLinkedList.cpp
 	$(CXX) $(CXXFLAGS) -c QueueWithLinkedList.cpp
+
+clean:
+	rm main main.o QueueWithLinkedList.o
