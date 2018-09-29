@@ -21,22 +21,22 @@ typedef struct node_s
 void printNode(Node* n)
 {
     if(!n->data)
-    printf("EMPTY\n");
+    printf("NULL");
     else
     {
         int *x = (int *)n->data;
-        cout<<*x<<endl;
+        cout<<*x;
     }
-    
+
 }
 
 class QueueWithLinkedList
-{   
+{
     private:
     Node* head;
     Node* tail;
     public:
- 
+
     QueueWithLinkedList()
     {
         head = nullptr;
@@ -56,7 +56,7 @@ class QueueWithLinkedList
 
     void enqueueNode(Node* n)
     {
-        if(!tail) 
+        if(!tail)
             head = tail = n;
         else
         {
@@ -76,7 +76,20 @@ class QueueWithLinkedList
             tail = tail->next;
         }
     }
-    
+
+    void enqueueInt(int n)
+    {
+        void *d = new int(n);
+        Node *tmp = new Node(d);
+        if(!tail)
+            head = tail = tmp;
+        else
+        {
+            tail->next = tmp;
+            tail = tail->next;
+        }
+    }
+
     Node* dequeueNode()
     {
         if(!head) return nullptr;
@@ -84,15 +97,56 @@ class QueueWithLinkedList
         {
             // get head pointer
             Node* tmp = head;
-            
+
             // move head one step up.
             head = head->next;
             tmp->next = nullptr;
-            
+
             // que is empty so we make tail null too
             if(!head) tail = nullptr;
             return tmp;
         }
+    }
+
+    void popNode()
+    {
+        if(!head) return;
+        else
+        {
+            Node *tmp = head;
+            head = head->next;
+            tmp->next = nullptr;
+            if(!head) tail = nullptr;
+            //if(tmp) delete tmp;
+        }
+    }
+
+    Node* topNode()
+    {
+        return head;
+    }
+
+    int topNodeInt()
+    {
+        Node *tmp = head;
+        if(tmp)
+            return *(int*)tmp->data;
+        else
+            return -1;
+    }
+
+    void printQueue()
+    {
+        Node *pntr = head;
+        cout<< "<== ";
+        while(pntr)
+        {
+            printNode(pntr);
+            if(pntr->next)
+                cout<<"->";
+            pntr = pntr->next;
+        }
+        cout<< " <== \n";
     }
 };
 
@@ -104,15 +158,21 @@ int main() {
 	Node* b = new Node(dataB);
 	void* dataA = new int(40);
 	Node* a = new Node(dataA);
+
 	QueueWithLinkedList* q = new QueueWithLinkedList(a);
-	
+
 	q->enqueueData(dataB);
 	q->enqueueNode(c);
-	Node* A = q->dequeueNode();
-	Node* B = q->dequeueNode();
-	Node* C = q->dequeueNode();
-	printNode(A);
-	printNode(B);
-	printNode(C);
+    q->enqueueInt(4);
+    q->printQueue();
+
+    int topNumber = q->topNodeInt();
+    q->popNode();
+    q->printQueue();
+
+
+	//printNode(A);
+	//printNode(B);
+	//printNode(C);
 	return 0;
 }
