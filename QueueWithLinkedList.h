@@ -1,23 +1,6 @@
 #ifndef QUEUEWITHLINKEDLIST_H
 #define QUEUEWITHLINKEDLIST_H
-
-typedef struct node_s
-{
-    void *data;
-    struct node_s *next;
-    node_s()
-    {
-        data = nullptr;
-        next = nullptr;
-    }
-    node_s(void* _d)
-    {
-        data = _d;
-        next = nullptr;
-    }
-} Node;
-
-void printNode(Node* n);
+#include "Node.h"
 
 class QueueWithLinkedList
 {

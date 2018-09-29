@@ -22,7 +22,8 @@ QueueWithLinkedList::QueueWithLinkedList()
 
 QueueWithLinkedList::QueueWithLinkedList(Node* n)
 {
-    head = tail = n;
+    cout<<"CALLING CONSTRUCTOR"<<endl;
+    //head = tail = n;
 }
 
 QueueWithLinkedList::QueueWithLinkedList(void* _d)
