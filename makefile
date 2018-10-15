@@ -9,8 +9,8 @@ CXXFLAGS = -Wall -g
 # ****************************************************
 # Targets needed to bring the executable up to date
 # main is execuatable , main.o and QueueWithLinkedList.o are targets
-main: main.o QueueWithLinkedList.o Node.o IntNode.o StackWithLinkedList.o
-	$(CXX) $(CXXFLAGS) -o main main.o QueueWithLinkedList.o Node.o IntNode.o StackWithLinkedList.o
+main: main.o QueueWithLinkedList.o Node.o IntNode.o StackWithLinkedList.o MinStackLinkedList.o
+	$(CXX) $(CXXFLAGS) -o main main.o QueueWithLinkedList.o Node.o IntNode.o StackWithLinkedList.o MinStackLinkedList.o
 
 # The main.o target can be written more simply
 main.o: main.cpp QueueWithLinkedList.h Node.h IntNode.h StackWithLinkedList.h
@@ -28,5 +28,8 @@ QueueWithLinkedList.o: QueueWithLinkedList.h Node.h
 StackWithLinkedList.o: StackWithLinkedList.h Node.h
 	$(CXX) $(CXXFLAGS) -c StackWithLinkedList.cpp
 
+MinStackLinkedList.o: MinStackLinkedList.h IntNode.h
+	$(CXX) $(CXXFLAGS) -c MinStackLinkedList.cpp
+
 clean:
-	rm -f main main.o QueueWithLinkedList.o Node.o IntNode.o StackWithLinkedList.o
+	rm -f main main.o QueueWithLinkedList.o Node.o IntNode.o StackWithLinkedList.o MinStackLinkedList.o
