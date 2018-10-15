@@ -32,4 +32,4 @@ MinStackLinkedList.o: MinStackLinkedList.h IntNode.h
 	$(CXX) $(CXXFLAGS) -c MinStackLinkedList.cpp
 
 clean:
-	rm -f main main.o QueueWithLinkedList.o Node.o IntNode.o StackWithLinkedList.o MinStackLinkedList.o
+	rm -f main main.o QueueWithLinkedList.o Node.o IntNode.o StackWithLinkedList.o MinStackLinkedList.o main.exe
