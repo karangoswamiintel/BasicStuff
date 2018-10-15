@@ -1,5 +1,6 @@
 #include "QueueWithLinkedList.h"
 #include "Node.h"
+#include "IntNode.h"
 using namespace std;
 
 int main() {
