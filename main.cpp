@@ -23,7 +23,8 @@ int main()
     q->printQueue();
 
     int topNumber = q->topNodeInt();
-    cout<< "TOPNUMBER: "<< topNumber<<endl;
+    cout<< "Queue tail: "<< topNumber<<endl;
+	cout<< "Popping "<<topNumber<<" from queue tail \n";
     q->popNode();
     q->printQueue();
 
