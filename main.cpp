@@ -7,26 +7,26 @@ using namespace std;
 
 int main()
 {
-	// your code goes here
-	cout << "This is a queue implementation \n";
-	Node *c = new Node();
+    // your code goes here
+    cout << "This is a queue implementation \n";
+    Node *c = new Node();
 
-	void* dataB = new int(3);
-	void* dataA = new int(40);
-	Node* a = new Node(dataA);
+    void* dataB = new int(3);
+    void* dataA = new int(40);
+    Node* a = new Node(dataA);
 
-	QueueWithLinkedList *q = new QueueWithLinkedList(a);
+    QueueWithLinkedList *q = new QueueWithLinkedList(a);
 
-	q->enqueueData(dataB);
-	q->enqueueNode(c);
+    q->enqueueData(dataB);
+    q->enqueueNode(c);
     q->enqueueInt(4);
     q->printQueue();
 
     int topNumber = q->topNodeInt();
     cout<< "Queue tail: "<< topNumber<<endl;
-	cout<< "Popping "<<topNumber<<" from queue tail \n";
+    cout<< "Popping "<<topNumber<<" from queue tail \n";
     q->popNode();
     q->printQueue();
 
-	return 1;
+    return 1;
 }
