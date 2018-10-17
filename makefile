@@ -10,9 +10,10 @@ CXXFLAGS = -Wall -g -static-libstdc++
 # Targets needed to bring the executable up to date
 # main is execuatable , main.o and QueueWithLinkedList.o are targets
 main: main.o QueueWithLinkedList.o Node.o IntNode.o StackWithLinkedList.o \
-	MinStackLinkedList.o SingletonMessageFramework.o
+	MinStackLinkedList.o SingletonMessageFramework.o MessageApplication.o
 	$(CXX) $(CXXFLAGS) -o main main.o QueueWithLinkedList.o Node.o IntNode.o \
-	StackWithLinkedList.o MinStackLinkedList.o SingletonMessageFramework.o
+	StackWithLinkedList.o MinStackLinkedList.o SingletonMessageFramework.o \
+	MessageApplication.o
 
 # The main.o target can be written more simply
 main.o: main.cpp QueueWithLinkedList.h Node.h IntNode.h StackWithLinkedList.h
@@ -27,6 +28,9 @@ IntNode.o: IntNode.h
 SingletonMessageFramework.o: SingletonMessageFramework.h
 	$(CXX) $(CXXFLAGS) -c SingletonMessageFramework.cpp
 
+MessageApplication.o: MessageApplication.h
+	$(CXX) $(CXXFLAGS) -c MessageApplication.cpp
+
 QueueWithLinkedList.o: QueueWithLinkedList.h Node.h
 	$(CXX) $(CXXFLAGS) -c QueueWithLinkedList.cpp
 
@@ -39,4 +43,4 @@ MinStackLinkedList.o: MinStackLinkedList.h IntNode.h
 clean:
 	rm -f main main.o QueueWithLinkedList.o Node.o IntNode.o \
 	StackWithLinkedList.o MinStackLinkedList.o SingletonMessageFramework.o \
-	main.exe
+	MessageApplication.o main.exe
