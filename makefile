@@ -9,8 +9,10 @@ CXXFLAGS = -Wall -g -static-libstdc++
 # ****************************************************
 # Targets needed to bring the executable up to date
 # main is execuatable , main.o and QueueWithLinkedList.o are targets
-main: main.o QueueWithLinkedList.o Node.o IntNode.o StackWithLinkedList.o MinStackLinkedList.o
-	$(CXX) $(CXXFLAGS) -o main main.o QueueWithLinkedList.o Node.o IntNode.o StackWithLinkedList.o MinStackLinkedList.o
+main: main.o QueueWithLinkedList.o Node.o IntNode.o StackWithLinkedList.o \
+	MinStackLinkedList.o SingletonMessageFramework.o
+	$(CXX) $(CXXFLAGS) -o main main.o QueueWithLinkedList.o Node.o IntNode.o \
+	StackWithLinkedList.o MinStackLinkedList.o SingletonMessageFramework.o
 
 # The main.o target can be written more simply
 main.o: main.cpp QueueWithLinkedList.h Node.h IntNode.h StackWithLinkedList.h
@@ -22,6 +24,9 @@ Node.o: Node.h
 IntNode.o: IntNode.h
 	$(CXX) $(CXXFLAGS) -c IntNode.cpp
 
+SingletonMessageFramework.o: SingletonMessageFramework.h
+	$(CXX) $(CXXFLAGS) -c SingletonMessageFramework.cpp
+
 QueueWithLinkedList.o: QueueWithLinkedList.h Node.h
 	$(CXX) $(CXXFLAGS) -c QueueWithLinkedList.cpp
 
@@ -32,4 +37,5 @@ MinStackLinkedList.o: MinStackLinkedList.h IntNode.h
 	$(CXX) $(CXXFLAGS) -c MinStackLinkedList.cpp
 
 clean:
-	rm -f main main.o QueueWithLinkedList.o Node.o IntNode.o StackWithLinkedList.o MinStackLinkedList.o main.exe
+	rm -f main main.o QueueWithLinkedList.o Node.o IntNode.o \
+	StackWithLinkedList.o MinStackLinkedList.o main.exe
