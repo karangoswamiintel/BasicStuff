@@ -6,6 +6,8 @@ class MinStackLinkedList
 {
 public:
     IntNode* head;
+    // minHead holds the minimum elements in order of insertion in Stack.
+    // It is also a linked list
     IntNode* minHead;
     MinStackLinkedList();
     void push(int x);
