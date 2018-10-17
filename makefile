@@ -38,4 +38,5 @@ MinStackLinkedList.o: MinStackLinkedList.h IntNode.h
 
 clean:
 	rm -f main main.o QueueWithLinkedList.o Node.o IntNode.o \
-	StackWithLinkedList.o MinStackLinkedList.o main.exe
+	StackWithLinkedList.o MinStackLinkedList.o SingletonMessageFramework.o \
+	main.exe
