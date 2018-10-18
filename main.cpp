@@ -7,7 +7,6 @@ using namespace std;
 
 int main()
 {
-    
     cout << "This is a queue implementation \n";
     Node *c = new Node();
 
@@ -27,6 +26,6 @@ int main()
     cout<< "Popping "<<topNumber<<" from queue tail \n";
     q->popNode();
     q->printQueue();
-
+    cout<<"end program \n";
     return 1;
 }
