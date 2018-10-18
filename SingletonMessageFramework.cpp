@@ -10,7 +10,8 @@ SingletonMessageFramework& SingletonMessageFramework::getInstance()
     return instance;
 }
 
-string SingletonMessageFramework::buildCompleteMessage(string rawData, string (*encryptorFunCB)(string))
+string SingletonMessageFramework::buildCompleteMessage(string rawData,
+    string (*encryptorFunCB)(string))
 {
     // Add a header and footer
     rawData = "[HEADER]" + rawData + "[FOOTER]";

@@ -9,7 +9,8 @@ public:
     static SingletonMessageFramework& getInstance();
 
     // Builds the complete message with header and footer
-    std::string buildCompleteMessage(std::string rawData, std::string (*encryptorFunCB)(std::string));
+    std::string buildCompleteMessage(std::string rawData,
+        std::string (*encryptorFunCB)(std::string));
 
 private:
     // Private constructor that cannot be accessed directly
